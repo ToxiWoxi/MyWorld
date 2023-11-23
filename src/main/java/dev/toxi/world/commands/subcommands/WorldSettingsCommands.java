@@ -1,4 +1,4 @@
-package dev.toxi.world.command.commands;
+package dev.toxi.world.commands.subcommands;
 
 import dev.toxi.world.MyWorld;
 import dev.toxi.world.config.DependenceConfig;

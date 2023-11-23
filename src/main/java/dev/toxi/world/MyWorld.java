@@ -1,6 +1,6 @@
 package dev.toxi.world;
 
-import dev.toxi.world.command.CommandRegistry;
+import dev.toxi.world.commands.CommandRegistry;
 import dev.toxi.world.config.*;
 import dev.toxi.world.listener.*;
 import dev.toxi.world.util.PapiExtension;
@@ -23,7 +23,8 @@ import java.io.IOException;
 /**
  * @author Butzlabben
  * @author Jubeki
- * @version 2.2.0.1
+ * @author ToxiWoxi
+ * @version 3.0.0
  * @since 10.07.2017
  */
 public class MyWorld extends JavaPlugin {
@@ -94,8 +95,8 @@ public class MyWorld extends JavaPlugin {
     @Override
     public void onEnable() {
         //////
-        getCommand("ws").setExecutor(new CommandRegistry());
-        getCommand("ws").setTabCompleter(new CommandRegistry());
+        getCommand("myworld").setExecutor(new CommandRegistry());
+        getCommand("myworld").setTabCompleter(new CommandRegistry());
 
         // Set right version
         if (VersionUtil.getVersion() >= 13)

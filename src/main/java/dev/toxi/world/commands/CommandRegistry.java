@@ -1,8 +1,8 @@
-package dev.toxi.world.command;
+package dev.toxi.world.commands;
 
-import dev.toxi.world.command.commands.WSCommands;
-import dev.toxi.world.command.commands.WorldAdministrateCommand;
-import dev.toxi.world.command.commands.WorldSettingsCommands;
+import dev.toxi.world.commands.subcommands.WSCommands;
+import dev.toxi.world.commands.subcommands.WorldAdministrateCommand;
+import dev.toxi.world.commands.subcommands.WorldSettingsCommands;
 import dev.toxi.world.util.Worldutils;
 import dev.toxi.world.wrapper.WorldTemplateProvider;
 import org.bukkit.Bukkit;

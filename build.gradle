@@ -22,81 +22,81 @@ spigot {
     depends = ["WorldEdit"]
     load = STARTUP
     commands {
-        "ws" {
+        "myworld" {
             description = 'All MyWorld Commands'
             permissionMessage = 'You do not have permission!'
         }
     }
     permissions {
-        'ws.*' {
+        'myworld.*' {
             description = 'gives all Perms'
             defaults = 'op'
             children = [
-                'ws.tp.*':true,
-                'ws.get':true,
-                'ws.sethome':true,
-                'ws.tp.world':true,
-                'ws.tp.toother':true,
-                'ws.tp.other':true,
-                'ws.build':true,
-                'ws.gamemode':true,
-                'ws.delete':true,
-                'ws.lag':true,
-                'ws.big':true,
-                'ws.large':true,
-                //'ws.confirm':true
+                'myworld.tp.*':true,
+                'myworld.get':true,
+                'myworld.sethome':true,
+                'myworld.tp.world':true,
+                'myworld.tp.toother':true,
+                'myworld.tp.other':true,
+                'myworld.build':true,
+                'myworld.gamemode':true,
+                'myworld.delete':true,
+                'myworld.lag':true,
+                'myworld.big':true,
+                'myworld.large':true,
+                //'myworld.confirm':true
             ]
         }
-        'ws.sethome' {
+        'myworld.sethome' {
             description = 'You can set a different worldspawn'
             defaults = true
         }
-        'ws.tp' {
+        'myworld.tp' {
             description = 'You can teleport everything'
             defaults = 'op'
-            children = ['ws.tp.toother':true,'ws.tp.other':true,'ws.tp.world':true]
+            children = ['myworld.tp.toother':true,'myworld.tp.other':true,'myworld.tp.world':true]
         }
-        'ws.build' {
+        'myworld.build' {
             description = 'You can build on other Worlds without WorldPermissions'
             defaults = 'op'
         }
-        'ws.get' {
-            description = 'You can create a world via /ws get'
+        'myworld.get' {
+            description = 'You can create a world via /myworld get'
             defaults = true
         }
-        'ws.delete' {
+        'myworld.delete' {
             description = 'You can delete a world'
             defaults = 'op'
         }
-        'ws.gamemode' {
+        'myworld.gamemode' {
             description = 'You can change GameMode on other worlds'
             defaults = 'op'
         }
-        'ws.tp.other' {
+        'myworld.tp.other' {
             description = 'You can teleport other persons'
             defaults = 'op'
         }
-        'ws.tp.toother' {
+        'myworld.tp.toother' {
             description = 'You can teleport across worlds'
             defaults = 'op'
         }
-        'ws.tp.world' {
+        'myworld.tp.world' {
             description = 'You can teleport to without rights World'
             defaults = 'op'
         }
-        'ws.lag' {
+        'myworld.lag' {
             description = 'You can see lag messages'
             defaults = 'op'
         }
-        'ws.big' {
+        'myworld.big' {
             description = 'Gives you a bigger world (if set)'
             defaults = 'op'
         }
-        'ws.large' {
+        'myworld.large' {
             defaults = 'op'
-            children = ['ws.big':true]
+            children = ['myworld.big':true]
         /*}
-        'ws.confirm' {
+        'myworld.confirm' {
             description = 'You can confirm (if needed) an auto-update'
             defaults = 'op'*/
         }

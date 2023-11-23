@@ -9,26 +9,26 @@ folia-supported: false
 depend: [ FAWE, WorldEdit, Vault ]
 softdepend: [ PlaceholderAPI ]
 commands:
-  ws:
+  myworld:
     description: MyWorld command
 permissions:
-  ws.*:
+  myworld.*:
     default: op
     description: Grants all /myworld subcommands
     children:
-      ws.tp.*: true
-      ws.get: true
-      ws.sethome: true
-      ws.build: true
-      ws.gamemode: true
-      ws.delete: true
-      ws.lag: true
-      ws.big: true
-      ws.large: true
- ws.tp.*:
+      myworld.tp.*: true
+      myworld.get: true
+      myworld.sethome: true
+      myworld.build: true
+      myworld.gamemode: true
+      myworld.delete: true
+      myworld.lag: true
+      myworld.big: true
+      myworld.large: true
+ myworld.tp.*:
     default: op
     description: Grants all /myworld tp subcommands
     children:
-      ws.tp.world: true
-      ws.tp.toother: true
-      ws.tp.other: true
+      myworld.tp.world: true
+      myworld.tp.toother: true
+      myworld.tp.other: true
