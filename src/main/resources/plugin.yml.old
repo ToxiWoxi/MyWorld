@@ -1,5 +1,5 @@
 name: WorldSystem
-main: de.butzlabben.world.WorldSystem
+main: world.dev.toxi.WorldSystem
 authors: [ CrazyCloudCraft ]
 version: ${version}
 description: ${description}

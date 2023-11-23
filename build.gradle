@@ -12,18 +12,18 @@ targetCompatibility = 17
 ext {
     mcVersion = "1.20.2"
 }
-archivesBaseName = "WorldSystem"
-version = "2.4.37"
+archivesBaseName = "MyWorld"
+version = "SNAPSHOT-3.0.0"
 spigot {
-group "de.butzlabben"
-name = "WorldSystem"
-authors = [" Trainerlord, Butzlabben & CrazyCloudCraft "]
-apiVersion = "1.20"
-depends = ["WorldEdit"]
-load = STARTUP
-	commands {
+    group "dev.toxi"
+    name = "MyWorld"
+    authors = [" Trainerlord, Butzlabben & CrazyCloudCraft, ToxiWoxi "]
+    apiVersion = "1.20"
+    depends = ["WorldEdit"]
+    load = STARTUP
+    commands {
         "ws" {
-            description = 'All WorldSystem Commands'
+            description = 'All MyWorld Commands'
             permissionMessage = 'You do not have permission!'
         }
     }
