@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class CommandRegistry implements TabExecutor {
+public class MainCommand implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
