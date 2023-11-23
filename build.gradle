@@ -1,7 +1,7 @@
 plugins {
     id 'com.github.johnrengelman.shadow' version '8.1.1'
     id 'kr.entree.spigradle' version '2.4.3'
-    id 'io.freefair.lombok' version '8.3'
+    id 'io.freefair.lombok' version '8.4'
     id 'java'
     id 'jacoco'
 }
@@ -111,7 +111,6 @@ repositories {
     maven { url "https://jitpack.io" }
     maven { url "https://libraries.minecraft.net" }
     maven { url "https://repo.onarandombox.com/content/groups/public/" }
-    maven { url "https://maven.enginehub.org/repo/" }
     maven { url "https://ci.athion.net/job/FastAsyncWorldEdit/changes/" }
     maven { url "https://mvnrepository.com/artifact/commons-io/commons-io/" }  // Commons - IO
     maven { url "https://maven.enginehub.org/repo/" } // WorldEdit
@@ -129,17 +128,17 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.+'
     testImplementation lombok()
     testAnnotationProcessor lombok()
-    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.15.0'
 
-    compileOnly("me.clip:placeholderapi:2.11.3")
+    compileOnly("me.clip:placeholderapi:2.11.5")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
-    compileOnly("com.mojang:authlib:1.5.26")
+    compileOnly("com.mojang:authlib:1.6.25")
     compileOnly("org.projectlombok:lombok:1.18.30")
-    compileOnly("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
-    compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.2.16-SNAPSHOT")
-    compileOnly("com.sk89q.worldedit:worldedit-core:7.2.16-SNAPSHOT")
-    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.8.0")
-    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Core:2.8.0")
+    compileOnly("org.spigotmc:spigot-api:1.20.2-R0.1-SNAPSHOT")
+    compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.3.0-SNAPSHOT")
+    compileOnly("com.sk89q.worldedit:worldedit-core:7.3.0-SNAPSHOT")
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.8.2")
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Core:2.8.2")
 }
 shadowJar {
     minimize()
