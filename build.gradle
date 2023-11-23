@@ -24,6 +24,10 @@ spigot {
     commands {
         "myworld" {
             description = 'All MyWorld Commands'
+            aliases = [
+                'mw',
+                'my'
+            ]
             permissionMessage = 'You do not have permission!'
         }
     }
