@@ -243,10 +243,10 @@ options:
         - '&7Toggles the permission for a player'
         - '&7To adminstrate this world'
 
-# WorldsystemGUI
-worldsystem:
+# MyWorldGUI
+myworld:
   fill: false
-  title: 'WorldSystem'
+  title: 'MyWorld'
 
   rows: 1
 

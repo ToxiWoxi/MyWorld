@@ -68,7 +68,7 @@ public class PluginConfig {
                                     + new SimpleDateFormat("dd-MM-yyyy-HH-mm-ss").format(new Date()) + ".yml").toPath(),
                             StandardCopyOption.REPLACE_EXISTING);
                     Files.delete(file.toPath());
-                    System.err.println("[WorldSystem] Config is broken, creating a new one!");
+                    System.err.println("[MyWorld] Config is broken, creating a new one!");
                     checkConfig(f);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -133,7 +133,7 @@ public class PluginConfig {
     }
 
     public static String getWorlddir() {
-        return getConfig().getString("worldfolder", "plugins/WorldSystem/Worlds") + "/";
+        return getConfig().getString("worldfolder", "plugins/MyWorld/Worlds") + "/";
     }
 
     public static boolean isMultiChoose() {
@@ -149,7 +149,7 @@ public class PluginConfig {
     }
 
     public static String getPrefix() {
-        return ChatColor.translateAlternateColorCodes('&', getConfig().getString("prefix", "§8[§3WorldSystem§8] §6"));
+        return ChatColor.translateAlternateColorCodes('&', getConfig().getString("prefix", "§8[§3MyWorld§8] §6"));
     }
 
     public static Location getWorldSpawn(World w) {

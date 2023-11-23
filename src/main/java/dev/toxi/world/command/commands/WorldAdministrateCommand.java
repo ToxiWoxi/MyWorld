@@ -189,7 +189,7 @@ public class WorldAdministrateCommand {
                     cs.sendMessage(MessageConfig.getUnknownError());
                     e.printStackTrace();
                 }
-            File dconfig = new File("plugins//WorldSystem//dependence.yml");
+            File dconfig = new File("plugins//MyWorld//dependence.yml");
             YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
             cfg.set("Dependences." + uuid + ".ID", null);
             cfg.set("Dependences." + uuid + ".ActualName", null);

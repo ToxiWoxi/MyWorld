@@ -14,12 +14,12 @@ public abstract class DatabaseConnection implements DatabaseUtil {
         synchronized (lock) {
             try {
                 if (connection == null || connection.isClosed()) {
-                    System.err.println("[WorldSystem | DB] Connection does not exist or was already closed");
+                    System.err.println("[MyWorld | DB] Connection does not exist or was already closed");
                     return;
                 }
                 connection.close();
             } catch (SQLException e) {
-                System.out.println("[WorldSystem | DB] Connection could not be closed");
+                System.out.println("[MyWorld | DB] Connection could not be closed");
                 e.printStackTrace();
             }
         }

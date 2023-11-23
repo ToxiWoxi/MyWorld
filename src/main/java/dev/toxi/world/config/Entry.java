@@ -15,7 +15,7 @@ public class Entry {
     protected Entry(OfflinePlayer op) {
         String uuid = op.getUniqueId().toString();
         this.op = op;
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
         if (cfg.getString("Dependences." + uuid + ".ActualName") == null) {
             worldname = "n";

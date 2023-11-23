@@ -1,5 +1,5 @@
-name: WorldSystem
-main: world.dev.toxi.WorldSystem
+name: MyWorld
+main: world.dev.toxi.MyWorld
 authors: [ CrazyCloudCraft ]
 version: ${version}
 description: ${description}
@@ -10,11 +10,11 @@ depend: [ FAWE, WorldEdit, Vault ]
 softdepend: [ PlaceholderAPI ]
 commands:
   ws:
-    description: WorldSystem command
+    description: MyWorld command
 permissions:
   ws.*:
     default: op
-    description: Grants all /worldsystem subcommands
+    description: Grants all /myworld subcommands
     children:
       ws.tp.*: true
       ws.get: true
@@ -27,7 +27,7 @@ permissions:
       ws.large: true
  ws.tp.*:
     default: op
-    description: Grants all /worldsystem tp subcommands
+    description: Grants all /myworld tp subcommands
     children:
       ws.tp.world: true
       ws.tp.toother: true

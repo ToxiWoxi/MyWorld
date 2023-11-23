@@ -45,13 +45,13 @@ public class DependenceConfig {
     }
 
     public static int getHighestID() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration dcfg = YamlConfiguration.loadConfiguration(dconfig);
         return dcfg.getInt("HighestID");
     }
 
     public static void checkWorlds() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
 
         long deleteTime = 1000 * 60 * 60 * 24 * PluginConfig.deleteAfter();
@@ -70,7 +70,7 @@ public class DependenceConfig {
     }
 
     private void setConfig() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
         cfg.set("HighestID", -1);
         try {
@@ -82,7 +82,7 @@ public class DependenceConfig {
 
     public void refreshName() {
         if (hasWorld()) {
-            File dconfig = new File("plugins//WorldSystem//dependence.yml");
+            File dconfig = new File("plugins//MyWorld//dependence.yml");
             YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
             String uuid = this.uuid.toString();
             cfg.set("Dependences." + uuid + ".ActualName", PlayerWrapper.getOfflinePlayer(this.uuid).getName());
@@ -95,7 +95,7 @@ public class DependenceConfig {
     }
 
     public void createNewEntry() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
         String uuid = this.uuid.toString();
         int id = cfg.getInt("HighestID");
@@ -111,7 +111,7 @@ public class DependenceConfig {
     }
 
     public boolean hasWorld() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
         String uuid = this.uuid.toString();
         //Fix for #40
@@ -119,7 +119,7 @@ public class DependenceConfig {
     }
 
     public String getWorldname() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration dcfg = YamlConfiguration.loadConfiguration(dconfig);
         String uuid = this.uuid.toString();
         int id = dcfg.getInt("Dependences." + uuid + ".ID");
@@ -129,7 +129,7 @@ public class DependenceConfig {
     public String getWorldNameByOfflinePlayer() {
         String name;
         String uuid = this.uuid.toString();
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
         if (cfg.getString("Dependences." + uuid + ".ActualName") == null) {
             name = "n";
@@ -140,7 +140,7 @@ public class DependenceConfig {
     }
 
     public void setLastLoaded() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(dconfig);
         String uuid = this.uuid.toString();
         cfg.set("Dependences." + uuid + ".last_loaded", System.currentTimeMillis());
@@ -152,7 +152,7 @@ public class DependenceConfig {
     }
 
     public int getID() {
-        File dconfig = new File("plugins//WorldSystem//dependence.yml");
+        File dconfig = new File("plugins//MyWorld//dependence.yml");
         YamlConfiguration dcfg = YamlConfiguration.loadConfiguration(dconfig);
         return dcfg.getInt("Dependences." + this.uuid.toString() + ".ID");
     }

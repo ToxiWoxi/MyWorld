@@ -56,8 +56,8 @@ public class VersionUtil {
                 version = 3;
         }
         if (version == 0) {
-            System.err.println("[WorldSystem] Unknown version: " + Bukkit.getVersion());
-            System.err.println("[WorldSystem] Choosing version 1.12.2");
+            System.err.println("[MyWorld] Unknown version: " + Bukkit.getVersion());
+            System.err.println("[MyWorld] Choosing version 1.12.2");
             version = 12;
         }
         return version;

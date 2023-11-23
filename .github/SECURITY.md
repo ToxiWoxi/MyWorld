@@ -15,7 +15,7 @@ currently being supported with security updates.
 
 This software was edited by CrazyCloudCraft.  
 The offical Creator @trainerlord seems to be online again, so we will end the support here.
-We do not support forks or other (malware) downloads exapt for our [github site](https://github.com/CrazyCloudCraft/worldsystem-depecated/) or [trainerlords site](https://github.com/trainerlord/WorldSystem)
+We do not support forks or other (malware) downloads exapt for our [github site](https://github.com/CrazyCloudCraft/myworld-depecated/) or [trainerlords site](https://github.com/trainerlord/MyWorld)
 Please write any security bugs directly to our issues.  
 For direct support contact N1klasse#1486 or Trainerlord#3534 on discord.  
   

@@ -6,7 +6,7 @@ import dev.toxi.world.config.MessageConfig;
 import dev.toxi.world.config.PluginConfig;
 import dev.toxi.world.config.WorldConfig;
 import dev.toxi.world.gui.WorldChooseGUI;
-import dev.toxi.world.gui.WorldSystemGUI;
+import dev.toxi.world.gui.MyWorldGUI;
 import dev.toxi.world.util.MoneyUtil;
 import dev.toxi.world.wrapper.SystemWorld;
 import dev.toxi.world.wrapper.WorldPlayer;
@@ -28,7 +28,7 @@ public class WSCommands {
 
         String prefix = PluginConfig.getPrefix();
         cs.sendMessage(
-                prefix + "WorldSystem by CrazyCloudCraft v" + MyWorld.getInstance().getDescription().getVersion());
+                prefix + "MyWorld by CrazyCloudCraft v" + MyWorld.getInstance().getDescription().getVersion());
         cs.sendMessage(prefix + "Contributors: Jubeki, montlikadani, jstoeckm2, Butzlabben");
         List<String> cmdHelp = MessageConfig.getCommandHelp();
         cmdHelp.forEach(s -> cs.sendMessage("§6" + s)); //(prefix + s));
@@ -51,7 +51,7 @@ public class WSCommands {
                 p.sendMessage(MessageConfig.getNoPermission());
                 return false;
             }
-            p.openInventory(new WorldSystemGUI().getInventory(p));
+            p.openInventory(new MyWorldGUI().getInventory(p));
             return true;
         } else {
             sender.sendMessage("No Console"); //TODO Get Config

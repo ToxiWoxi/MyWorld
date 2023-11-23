@@ -1,7 +1,7 @@
 
 
 # Path where the worlds will be saved
-worldfolder: 'plugins/WorldSystem/Worlds'
+worldfolder: 'plugins/MyWorld/Worlds'
 
 worldtemplates:
   # Whether players can decide on different templates
@@ -11,8 +11,8 @@ worldtemplates:
   templates:
     # The "1" can be any key
     1:
-      # Name of directory in plugins/WorldSystem/worldsources
-      # e.g. this would be plugins/WorldSystem/worldsources/template_default
+      # Name of directory in plugins/MyWorld/worldsources
+      # e.g. this would be plugins/MyWorld/worldsources/template_default
       name: 'template_default'
       # Just remove the permission field if everybody should be able to use this template
     2:
@@ -46,11 +46,11 @@ need_confirm: true
 # When nobody is on a world time until it get unloaded
 unloadingtime: 20
 
-# If true nobody can teleport or change their gamemode a WorldSystem world
+# If true nobody can teleport or change their gamemode a MyWorld world
 # Except for players with the permissions: ws.gamemode | ws.tp.*
 survival: false
 
-# If WorldSystem should load the worlds async if possible (FAWE installed)
+# If MyWorld should load the worlds async if possible (FAWE installed)
 load_worlds_async: true
 
 # Options for the database saving player positions
@@ -75,7 +75,7 @@ database:
     database: database
   sqlite_settings:
     # Where the database file should be located
-    file: 'plugins/WorldSystem/repository.db'
+    file: 'plugins/MyWorld/repository.db'
 
 # If true players will teleported to the spawn on join
 spawn_teleportation: true
@@ -83,17 +83,17 @@ spawn_teleportation: true
 # Time in seconds until a request expires
 request_expires: 20
 
-# Name of the languagefile in plugins/WorldSystem/languages/
+# Name of the languagefile in plugins/MyWorld/languages/
 language: en
 
 # Prefix which will be shown before each message
-prefix: '&8[&3WorldSystem&8] &6'
+prefix: '&8[&3MyWorld&8] &6'
 
 # Time in days after a not used world will be deleted
 # Set to -1 to disable
 delete_after: -1
 
-# Whether WorldSystem should contact the Mojang authserver
+# Whether MyWorld should contact the Mojang authserver
 # If not, some unknown playernames will not be displayed
 # eg. in the gui or in /ws info
 contact_authserver: true

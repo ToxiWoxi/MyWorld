@@ -22,7 +22,7 @@ public class PapiExtension extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getIdentifier() {
-        return "worldsystem";
+        return "myworld";
     }
 
     @Override

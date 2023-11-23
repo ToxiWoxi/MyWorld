@@ -24,7 +24,7 @@ public class GuiCommand implements CommandExecutor {
             sender.sendMessage(MessageConfig.getNoPermission());
             return true;
         }
-        ((Player) sender).openInventory(new WorldSystemGUI().getInventory((Player) sender));
+        ((Player) sender).openInventory(new MyWorldGUI().getInventory((Player) sender));
         return true;
     }
 

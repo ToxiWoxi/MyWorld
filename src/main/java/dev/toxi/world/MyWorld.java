@@ -190,7 +190,7 @@ public class MyWorld extends JavaPlugin {
         if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI"))
             new PapiExtension().register();
 
-        Bukkit.getConsoleSender().sendMessage(PluginConfig.getPrefix() + "Successfully enabled WorldSystem v" + version);
+        Bukkit.getConsoleSender().sendMessage(PluginConfig.getPrefix() + "Successfully enabled MyWorld v" + version);
     }
 
     @Override
@@ -206,7 +206,7 @@ public class MyWorld extends JavaPlugin {
         DatabaseProvider.instance.util.close();
 
         Bukkit.getConsoleSender()
-                .sendMessage(PluginConfig.getPrefix() + "Successfully disabled WorldSystem v" + version);
+                .sendMessage(PluginConfig.getPrefix() + "Successfully disabled MyWorld v" + version);
     }
 
     public CreatorAdapter getAdapter() {

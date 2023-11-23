@@ -54,7 +54,7 @@ public class PlayersPageGUI {
             OrcItem back = OrcItem.back.clone();
             back.setOnClick((player, inv, i) -> {
                 player.closeInventory();
-                player.openInventory(new WorldSystemGUI().getInventory(p));
+                player.openInventory(new MyWorldGUI().getInventory(p));
             });
             creator.getInvPages().forEach((oi) -> {
                 oi.addItem(GuiConfig.getSlot("options.players.back"), back);

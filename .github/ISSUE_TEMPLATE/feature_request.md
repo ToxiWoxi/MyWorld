@@ -1,6 +1,6 @@
 ---
 Name: 'Feature request'
-About: 'Suggest an idea for WorldSystems'
+About: 'Suggest an idea for MyWorlds'
 Title: 'Feature'
 Labels: 'new-feature'
 Assignees: ''

@@ -1,6 +1,6 @@
 # Center will be at the spawn or the worldspawn
 worldborder:
-  # If WorldSystem should change the worldborder
+  # If MyWorld should change the worldborder
   should_change: true
   # Default size
   normal: 500

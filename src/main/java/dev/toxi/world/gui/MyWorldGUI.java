@@ -9,13 +9,13 @@ import dev.toxi.world.gui.clicklistener.InventoryOpenClickListener;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-public class WorldSystemGUI extends OrcInventory {
+public class MyWorldGUI extends OrcInventory {
 
-    private final static String path = "worldsystem.";
+    private final static String path = "myworld.";
 
-    public WorldSystemGUI() {
+    public MyWorldGUI() {
 
-        super(GuiConfig.getTitle(GuiConfig.getConfig(), "worldsystem"), GuiConfig.getRows("worldsystem"), GuiConfig.isFill("worldsystem"));
+        super(GuiConfig.getTitle(GuiConfig.getConfig(), "myworld"), GuiConfig.getRows("myworld"), GuiConfig.isFill("myworld"));
 
         loadItem("playeroptions", (p, inv, item) -> {
             p.closeInventory();

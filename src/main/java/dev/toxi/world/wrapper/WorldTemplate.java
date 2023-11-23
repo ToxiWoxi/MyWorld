@@ -50,7 +50,7 @@ public class WorldTemplate {
     }
 
     public String getPath() {
-        return "plugins/WorldSystem/worldsources/" + name;
+        return "plugins/MyWorld/worldsources/" + name;
     }
 
     public String getPermission() {

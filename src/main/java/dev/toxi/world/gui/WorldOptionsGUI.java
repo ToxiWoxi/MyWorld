@@ -42,7 +42,7 @@ public class WorldOptionsGUI extends OrcInventory {
             OrcItem back = OrcItem.back.clone();
             back.setOnClick((p, inv, i) -> {
                 p.closeInventory();
-                p.openInventory(new WorldSystemGUI().getInventory(p));
+                p.openInventory(new MyWorldGUI().getInventory(p));
             });
             addItem(GuiConfig.getSlot(path + "back"), back);
         }
