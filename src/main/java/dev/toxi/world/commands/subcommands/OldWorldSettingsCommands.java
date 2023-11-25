@@ -1,32 +1,20 @@
 package dev.toxi.world.commands.subcommands;
 
-import dev.toxi.world.MyWorld;
 import dev.toxi.world.config.DependenceConfig;
 import dev.toxi.world.config.MessageConfig;
 import dev.toxi.world.config.PluginConfig;
 import dev.toxi.world.config.WorldConfig;
-import dev.toxi.world.event.WorldResetEvent;
 import dev.toxi.world.event.WorldToggleFireEvent;
 import dev.toxi.world.event.WorldToggleTntEvent;
-import dev.toxi.world.gui.WorldChooseGUI;
-import dev.toxi.world.util.PlayerPositions;
 import dev.toxi.world.wrapper.SystemWorld;
-import dev.toxi.world.wrapper.WorldPlayer;
-import dev.toxi.world.wrapper.WorldTemplate;
-import dev.toxi.world.wrapper.WorldTemplateProvider;
-import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.WorldCreator;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class WorldSettingsCommands {
+public class OldWorldSettingsCommands {
 
     public boolean tntCommand(CommandSender sender, Command command, String label, String[] args) {
             if (sender instanceof Player) {

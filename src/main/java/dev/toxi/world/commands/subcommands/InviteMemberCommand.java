@@ -16,6 +16,7 @@ import org.bukkit.entity.Player;
 import java.io.IOException;
 
 public class InviteMemberCommand implements CommandExecutor {
+    //    TODO: Rewrite permissions!
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {

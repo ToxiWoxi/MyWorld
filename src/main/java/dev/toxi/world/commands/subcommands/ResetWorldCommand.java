@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ResetWorldCommand implements CommandExecutor {
+    //    TODO: Rewrite permissions!
     private static final ArrayList<Player> toConfirm = new ArrayList<>();
 
     private void createWorld(Player p, String worldname, File f, WorldTemplate template, SystemWorld sw) {

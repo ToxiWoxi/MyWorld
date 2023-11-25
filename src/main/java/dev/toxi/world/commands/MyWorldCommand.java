@@ -19,7 +19,7 @@ public class MyWorldCommand implements TabExecutor {
     public boolean onCommand(CommandSender s, Command c, String l, String[] a) {
 
         if (a.length == 0) return new HelpCommand().onCommand(s, c, l, a);
-        WorldSettingsCommands settings = new WorldSettingsCommands();
+        OldWorldSettingsCommands settings = new OldWorldSettingsCommands();
         switch (a[0].toLowerCase()) {
             //WSCommands
             case "create":
@@ -80,13 +80,14 @@ public class MyWorldCommand implements TabExecutor {
         List<String> worldSettings = Arrays.asList("time", "weather");
         List<String> timeOptions = Arrays.asList("morning", "noon", "day", "evening", "night", "midnight");
         List<String> weatherOptions = Arrays.asList("clear", "raining", "storming");
-        List<String> allowedGamerules = Arrays.asList("disableRaids", "doDaylightCycle", "doEntityDrops", "doFireTick", "doMobLoot", "doMobSpawning", "doPatrolSpawning", "doTileDrops", "doWeatherCycle", "mobGriefing", "tntExplodes");
         List<String> booleanOptions = Arrays.asList("true", "false");
         List<String> completions = new ArrayList<>();
         List<String> playerNames = new ArrayList<>();
         for (Player p : Bukkit.getOnlinePlayers()) {
             playerNames.add(p.getName());
         }
+
+        if (args[0].equalsIgnoreCase("gamerule")) return new GameruleCommand().onTabComplete(sender, command, alias, args);
 
         if (args.length == 1) {
             for(String s : subCommands) if (s.startsWith(args[0].toLowerCase())) completions.add(s);
@@ -98,9 +99,6 @@ public class MyWorldCommand implements TabExecutor {
             }
             if (args[0].equalsIgnoreCase("set")) {
                 for(String s : worldSettings) if (s.toLowerCase().startsWith(args[1].toLowerCase())) completions.add(s);
-            }
-            if (args[0].equalsIgnoreCase("gamerule")) {
-                for(String s : allowedGamerules) if (s.toLowerCase().startsWith(args[1].toLowerCase())) completions.add(s);
             }
         }
 

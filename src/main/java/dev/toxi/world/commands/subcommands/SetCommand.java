@@ -5,6 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class SetCommand implements CommandExecutor {
+    //    TODO: Write this command!
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         return true;

@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import java.util.Iterator;
 
 public class WorldInfoCommand implements CommandExecutor {
+    //    TODO: Rewrite to include new settings!
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player p) {

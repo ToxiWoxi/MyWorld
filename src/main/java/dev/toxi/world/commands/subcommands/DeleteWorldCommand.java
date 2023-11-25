@@ -20,6 +20,9 @@ import org.bukkit.entity.Player;
 import java.io.File;
 
 public class DeleteWorldCommand implements CommandExecutor {
+    //    TODO: Rewrite permissions!
+    //    TODO: Add argument logic!
+    //    TODO: Add confirmation check!
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         CommandSender cs = sender;

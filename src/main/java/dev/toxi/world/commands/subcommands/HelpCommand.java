@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 import java.util.List;
 
 public class HelpCommand implements CommandExecutor {
+    //    TODO: Rewrite this command to use permissions!
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         CommandSender cs = sender;
