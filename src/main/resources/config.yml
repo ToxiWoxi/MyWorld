@@ -95,7 +95,7 @@ delete_after: -1
 
 # Whether MyWorld should contact the Mojang authserver
 # If not, some unknown playernames will not be displayed
-# eg. in the gui or in /ws info
+# eg. in the gui or in /my info
 contact_authserver: true
 
 # Options for the LagSystem:

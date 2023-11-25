@@ -23,8 +23,8 @@ public class WorldOptionsGUI extends OrcInventory {
     public WorldOptionsGUI() {
         super(GuiConfig.getTitle(GuiConfig.getConfig(), "options.world"), GuiConfig.getRows("options.world"), GuiConfig.isFill("options.world"));
 
-        loadItem("fire", "/ws fire", true, new FireStatus());
-        loadItem("tnt", "/ws tnt", true, new TntStatus());
+        loadItem("fire", "/my fire", true, new FireStatus());
+        loadItem("tnt", "/my tnt", true, new TntStatus());
 
         if (!GuiConfig.isEnabled(path + "reset"))
             return;
@@ -33,7 +33,7 @@ public class WorldOptionsGUI extends OrcInventory {
         if (item != null) {
             item.setOnClick((p, inv, i) -> {
                 p.closeInventory();
-                p.chat("/ws reset");
+                p.chat("/my reset");
             });
             addItem(GuiConfig.getSlot(path + "reset"), item);
         }

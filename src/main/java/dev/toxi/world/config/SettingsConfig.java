@@ -187,7 +187,7 @@ public class SettingsConfig {
     }
 
     /**
-     * @return the commands specified in settings.yml on /ws get
+     * @return the commands specified in settings.yml on /my create
      */
     public static List<String> getCommandsonGet() {
         YamlConfiguration cfg = getConfig();

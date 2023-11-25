@@ -29,7 +29,7 @@ public class WorldTemplate {
 
         icon.setOnClick((p, inv, item) -> {
             p.closeInventory();
-            p.chat("/ws get " + name);
+            p.chat("/my create " + name);
         });
     }
 

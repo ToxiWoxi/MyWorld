@@ -18,19 +18,20 @@ public class MessageConfig {
     private static File file;
 
     static {
-        defaultCmdHelp.add("/ws get §8- §7Will give you a World");
-        defaultCmdHelp.add("/ws home §8- §7Teleports you on your World");
-        defaultCmdHelp.add("/ws sethome §8- §7Sets a specific home");
-        defaultCmdHelp.add("/ws tp §8- §7Teleports you on a specific World");
-        defaultCmdHelp.add("/ws addmember §8- §7Adds a player to your World");
-        defaultCmdHelp.add("/ws delmember§8 - §7Removes a player from your World");
-        defaultCmdHelp.add("/ws tnt §8- §7Allows/Denys TNT on your World");
-        defaultCmdHelp.add("/ws fire §8- §7Allows/Denys Fire on your World");
-        defaultCmdHelp.add("/ws togglechgm §8- §7Allows/Denys a player changing gamemode");
-        defaultCmdHelp.add("/ws togglebuild §8- §7Allows/Denys a player building");
-        defaultCmdHelp.add("/ws toggletp §8- §7Allows/Denys a player teleporting");
-        defaultCmdHelp.add("/ws info §8- §7Shows information about the World");
-        defaultCmdHelp.add("/ws reset §8- §7Will reset your World");
+        defaultCmdHelp.add("/my create §8- §7Create a world");
+        defaultCmdHelp.add("/my reset §8- §7Reset your World");
+        defaultCmdHelp.add("/my home §8- §7Teleport to your world's home");
+        defaultCmdHelp.add("/my tp §8- §7Teleport to another player's world");
+        defaultCmdHelp.add("/my leave §8- §7Leave a world");
+        defaultCmdHelp.add("/my invite §8- §7Add a player to your World");
+        defaultCmdHelp.add("/my kick §8 - §7Remove a player from your World");
+        defaultCmdHelp.add("/my set §8- §7Change a setting on your world");
+        defaultCmdHelp.add("/my toggle §8- §7Change a gamerule on your world");
+        defaultCmdHelp.add("/my allow §8- §7Allow a permission for a player on your world");
+        defaultCmdHelp.add("/my deny §8- §7Deny a permission for a player on your world");
+        defaultCmdHelp.add("/my gui §8- §7Open settings GUI (must be world owner)");
+        defaultCmdHelp.add("/my info §8- §7Shows information about the world you are in");
+        defaultCmdHelp.add("/my credits §8- §7See information about the plugin");
     }
 
     private MessageConfig() {
@@ -139,7 +140,7 @@ public class MessageConfig {
     }
 
     public static String getWorldCreated() {
-        return getMessage("world.created", "Your world is now ready. Get there with §a/ws home");
+        return getMessage("world.created", "Your world is now ready. Get there with §a/my home");
     }
 
     public static String getWorldStillCreating() {
@@ -264,7 +265,7 @@ public class MessageConfig {
     }
 
     public static String getDeleteCommandHelp() {
-        return getRawMessage("command_help.delete_command", "/ws delete §8- §7Will delete a World");
+        return getRawMessage("command_help.delete_command", "/my delete §8- §7Delete a World");
     }
 
     public static List<String> getCommandHelp() {
