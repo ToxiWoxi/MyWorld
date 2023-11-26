@@ -75,7 +75,7 @@ public class MyWorldCommand implements TabExecutor {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         List<String> subCommands = new ArrayList<>(Arrays.asList("create", "reset", "delete", "home", "tp", "leave", "invite", "kick", "set", "allow", "deny", "gui", "info", "credits"));
-        if (GameruleCommand.hasPermission(sender)) subCommands.add("gamerule");
+        if (GameruleCommand.hasPermission(sender) && sender instanceof Player) subCommands.add("gamerule");
         List<String> playerCompletions = Arrays.asList("tp", "invite", "kick", "allow", "deny");
         List<String> worldSettings = Arrays.asList("time", "weather");
         List<String> timeOptions = Arrays.asList("morning", "noon", "day", "evening", "night", "midnight");
