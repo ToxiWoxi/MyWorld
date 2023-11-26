@@ -19,7 +19,6 @@ public class MyWorldCommand implements TabExecutor {
     public boolean onCommand(CommandSender s, Command c, String l, String[] a) {
 
         if (a.length == 0) return new HelpCommand().onCommand(s, c, l, a);
-        OldWorldSettingsCommands settings = new OldWorldSettingsCommands();
         switch (a[0].toLowerCase()) {
             //WSCommands
             case "create":
@@ -75,7 +74,8 @@ public class MyWorldCommand implements TabExecutor {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-        List<String> subCommands = Arrays.asList("create", "reset", "delete", "home", "tp", "leave", "invite", "kick", "set", "gamerule", "allow", "deny", "gui", "info", "credits");
+        List<String> subCommands = new ArrayList<>(Arrays.asList("create", "reset", "delete", "home", "tp", "leave", "invite", "kick", "set", "allow", "deny", "gui", "info", "credits"));
+        if (GameruleCommand.hasPermission(sender)) subCommands.add("gamerule");
         List<String> playerCompletions = Arrays.asList("tp", "invite", "kick", "allow", "deny");
         List<String> worldSettings = Arrays.asList("time", "weather");
         List<String> timeOptions = Arrays.asList("morning", "noon", "day", "evening", "night", "midnight");
