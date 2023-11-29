@@ -1,6 +1,6 @@
 package dev.toxi.world.listener;
 
-import dev.toxi.world.config.SettingsConfig;
+// import dev.toxi.world.config.SettingsConfig;
 import dev.toxi.world.wrapper.SystemWorld;
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
@@ -17,8 +17,7 @@ public class WorldInitSkipSpawn implements Listener {
         if(sw == null)
             return;
 
-        SettingsConfig.editWorld(world);
-        // e.getWorld().setKeepSpawnInMemory(false);
+        // SettingsConfig.editWorld(world);
         e.getWorld().setKeepSpawnInMemory(false);
     }
 
