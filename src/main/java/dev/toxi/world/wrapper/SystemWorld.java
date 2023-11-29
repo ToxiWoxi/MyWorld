@@ -55,7 +55,7 @@ public class SystemWorld {
         if (cached.containsKey(worldname))
             return cached.get(worldname);
         SystemWorld sw = new SystemWorld(worldname);
-        if (sw != null && sw.exists()) {
+        if (sw.exists()) {
             cached.put(worldname, sw);
             return sw;
         }
@@ -69,7 +69,7 @@ public class SystemWorld {
     public static void tryUnloadLater(World w) {
         if (w != null)
             Bukkit.getScheduler().runTaskLater(MyWorld.getInstance(), () -> {
-                if (w.getPlayers().size() == 0) {
+                if (w.getPlayers().isEmpty()) {
                     SystemWorld sw = SystemWorld.getSystemWorld(w.getName());
                     if (sw != null && sw.isLoaded())
                         sw.unloadLater(w);
@@ -361,6 +361,93 @@ public class SystemWorld {
                 teleportToWorldSpawn(p);
             }
         }, 10L);
+
+        OfflinePlayer owner = PlayerWrapper.getOfflinePlayer(WorldConfig.getWorldConfig(worldname).getOwner());
+        DependenceConfig dc = new DependenceConfig(owner);
+        dc.setLastLoaded();
+    }
+
+    /**
+     * Trys to load this world, and messages the player about the process
+     *
+     * @param p the player to teleport on the world
+     * @throws NullPointerException     if p is null
+     * @throws IllegalArgumentException if player is not online
+     */
+    public void backgroundLoad(Player p) {
+        if (!Bukkit.isPrimaryThread()) {
+            Bukkit.getScheduler().runTask(MyWorld.getInstance(), () -> load(p));
+            return;
+        }
+        Preconditions.checkNotNull(p, "player must not be null");
+        Preconditions.checkArgument(p.isOnline(), "player must be online");
+
+        if (creating) {
+            p.sendMessage(MessageConfig.getWorldStillCreating());
+            return;
+        }
+
+        WorldLoadEvent event = new WorldLoadEvent(p, this);
+        Bukkit.getPluginManager().callEvent(event);
+        if (event.isCancelled())
+            return;
+
+        setUnloading(false);
+
+        // Move World into Server dir
+        String worlddir = PluginConfig.getWorlddir();
+        File world = new File(worlddir + "/" + worldname);
+
+        if (world.exists()) {
+            // Check for duplicated worlds
+            File propablyExistingWorld = new File(Bukkit.getWorldContainer(), worldname);
+            if (propablyExistingWorld.exists()) {
+                System.err.println("World " + worldname + " existed twice!");
+                try {
+                    FileUtils.deleteDirectory(propablyExistingWorld);
+                } catch (IOException e) {
+                    p.sendMessage(MessageConfig.getUnknownError());
+                    e.printStackTrace();
+                }
+            }
+
+            //Move world if exists
+            try {
+                FileUtils.moveDirectoryToDirectory(world, Bukkit.getWorldContainer(), false);
+            } catch (IOException e) {
+                System.err.println("Couldn't load world of " + p.getName());
+                p.sendMessage(PluginConfig.getPrefix() + "§cError: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+
+        // Check for old named worlds
+        if (worldname.charAt(worldname.length() - 37) == ' ') {
+            StringBuilder myName = new StringBuilder(worldname);
+            myName.setCharAt(worldname.length() - 37, '-');
+            world.renameTo(new File(Bukkit.getWorldContainer(), myName.toString()));
+            worldname = myName.toString();
+        }
+
+
+        WorldCreator creator = new WorldCreator(worldname);
+
+        String templateKey = WorldConfig.getWorldConfig(worldname).getTemplateKey();
+        WorldTemplate template = WorldTemplateProvider.getInstance().getTemplate(templateKey);
+        if (template == null)
+            template = WorldTemplateProvider.getInstance().getTemplate(PluginConfig.getDefaultWorldTemplate());
+
+        if (template != null)
+            creator = template.generatorSettings.asWorldCreator(worldname);
+
+
+        World w = Bukkit.getWorld(worldname);
+        if (w == null)
+            w = Bukkit.createWorld(creator);
+
+        this.w = w;
+
+        unloadLater(w);
 
         OfflinePlayer owner = PlayerWrapper.getOfflinePlayer(WorldConfig.getWorldConfig(worldname).getOwner());
         DependenceConfig dc = new DependenceConfig(owner);
